@@ -21,8 +21,8 @@ model User {
   // Optional for WebAuthn support
   Authenticator Authenticator[]
 
-  flashCardsSets FlashCardsSet[]
-  isAdmin        Boolean         @default(false)
+  flashCardSets FlashCardSet[]
+  isAdmin       Boolean        @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -85,7 +85,7 @@ model Authenticator {
   @@id([userId, credentialID])
 }
 
-model FlashCardsSet {
+model FlashCardSet {
   id          String      @id @default(cuid())
   title       String
   description String?
@@ -98,11 +98,11 @@ model FlashCardsSet {
 }
 
 model FlashCard {
-  id    String        @id @default(cuid())
-  front String
-  back  String
-  set   FlashCardsSet @relation(fields: [setId], references: [id], onDelete: Cascade)
-  setId String
+  id             String       @id @default(cuid())
+  front          String
+  back           String
+  set            FlashCardSet @relation(fields: [flashCardSetId], references: [id], onDelete: Cascade)
+  flashCardSetId String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
