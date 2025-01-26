@@ -16,9 +16,9 @@ async function main() {
     await resetTable(table);
   }
 
-  await seedUsers();
-  await seedFlashcardSets();
-  await seedFlashcards();
+  const users = await seedUsers();
+  const flashcardSets = await seedFlashcardSets(users);
+  await seedFlashcards(flashcardSets);
 
   console.log("Seeds have been executed");
 }

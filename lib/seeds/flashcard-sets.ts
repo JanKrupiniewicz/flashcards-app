@@ -1,16 +1,16 @@
 import { faker } from "@faker-js/faker";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, User } from "@prisma/client";
 import { FlashCardSet } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const mockFlashcardSets = () => {
+const mockFlashcardSets = (users: User[]) => {
   const data: FlashCardSet[] = [];
 
   for (let i = 0; i < 100; i++) {
     data.push({
-      id: i.toString(),
-      userId: faker.number.int({ min: 0, max: 49 }).toString(),
+      id: faker.string.uuid(),
+      userId: users[faker.number.int({ min: 0, max: users.length - 1 })].id,
       title: faker.lorem.words(3),
       description: faker.lorem.sentence(),
       createdAt: faker.date.recent(),
@@ -21,12 +21,14 @@ const mockFlashcardSets = () => {
   return data;
 };
 
-const seedFlashcardSets = async () => {
-  const flashcardSets = mockFlashcardSets();
+const seedFlashcardSets = async (users: User[]) => {
+  const flashcardSets = mockFlashcardSets(users);
 
   await prisma.flashCardSet.createMany({
     data: flashcardSets,
   });
+
+  return flashcardSets;
 };
 
 export { seedFlashcardSets };

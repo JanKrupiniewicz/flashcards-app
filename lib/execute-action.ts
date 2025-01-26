@@ -5,6 +5,7 @@ type Options<T> = {
   successMessage?: string;
 };
 
+// Good practice: Execute a server action and return a success message or an error message
 const executeAction = async <T>({
   actionFn,
   successMessage = "The actions was successful",

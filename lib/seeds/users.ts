@@ -9,9 +9,10 @@ const mockUsers = () => {
 
   for (let i = 0; i < 50; i++) {
     data.push({
-      id: i.toString(),
+      id: faker.string.uuid(),
       name: faker.person.fullName(),
       email: faker.internet.email(),
+      password: faker.internet.password(),
       emailVerified: faker.date.recent(),
       image: faker.image.avatar(),
       isAdmin: false,
@@ -29,6 +30,8 @@ const seedUsers = async () => {
   await prisma.user.createMany({
     data: users,
   });
+
+  return users;
 };
 
 export { seedUsers };
