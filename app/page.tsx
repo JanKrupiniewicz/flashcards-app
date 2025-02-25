@@ -7,7 +7,18 @@ import NextLink from "next/link";
 
 const Home = async () => {
   return (
-    <Container maxWidth="lg">
+    <Container
+      maxWidth="lg"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "100vh",
+        maxWidth: "1280px",
+        margin: "0 auto",
+        padding: "16px",
+      }}
+    >
       <Box
         sx={{
           my: 4,
@@ -20,10 +31,10 @@ const Home = async () => {
         <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
           Material UI - Next.js App Router example in TypeScript
         </Typography>
-        <Link href="/signin" color="secondary" component={NextLink}>
+        <Link href="/sign-in" color="secondary" component={NextLink}>
           Sign In
         </Link>
-        <Link href="/signup" color="secondary" component={NextLink}>
+        <Link href="/sign-up" color="secondary" component={NextLink}>
           Sign Up
         </Link>
       </Box>

@@ -1,6 +1,6 @@
 import { signIn } from "@/lib/auth";
-import { Github } from "./ui/github";
 import Button from "@mui/material/Button";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const GithubSignIn = () => {
   return (
@@ -10,7 +10,7 @@ const GithubSignIn = () => {
         await signIn("github");
       }}
     >
-      <Button variant="outlined" startIcon={<Github />}>
+      <Button type="submit" variant="outlined" startIcon={<GitHubIcon />}>
         Continue with GitHub
       </Button>
     </form>
