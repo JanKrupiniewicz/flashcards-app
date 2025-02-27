@@ -1,4 +1,4 @@
-import { UserRegisterCredentials } from "../schema";
+import { UserRegisterCredentials } from "@/schema/user";
 import { executeAction } from "../execute-action";
 import db from "@/prisma/db";
 

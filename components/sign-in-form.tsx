@@ -1,6 +1,6 @@
 "use client";
 
-import { userLoginCredentials, UserLoginCredentials } from "@/lib/schema";
+import { userLoginCredentials, UserLoginCredentials } from "@/schema/user";
 import { Button, TextField } from "@mui/material";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";

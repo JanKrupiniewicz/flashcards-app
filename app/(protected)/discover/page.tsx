@@ -1,14 +1,14 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { Box, Typography } from "@mui/material";
-import { getFlashcardSets } from "@/lib/api/flashcard-sets";
-import { FlashcardSetCard } from "@/components/ui/flashcard-set-card";
+import { getUsersFlashcardSets } from "@/lib/api/flashcard-sets";
+import { FlashcardSetCard } from "@/components/flashcard-set-card";
 
 const discoverPage = async () => {
   const session = await auth();
   if (!session) redirect("/");
 
-  const flashcardSets = await getFlashcardSets(session.user?.id as string);
+  const flashcardSets = await getUsersFlashcardSets(session.user?.id as string);
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 6, p: 2 }}>

@@ -5,7 +5,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./globals.css";
 import Box from "@mui/material/Box";
-import SideNavbar from "@/components/ui/side-navbar";
+import SideNavbar from "@/components/side-navbar";
 
 export const metadata: Metadata = {
   title: "next-flashcards",

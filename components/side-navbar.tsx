@@ -11,7 +11,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import LoginIcon from "@mui/icons-material/Login";
 import DnsIcon from "@mui/icons-material/Dns";
-import ListItemSignOut from "../list-item-sign-out";
+import ListItemSignOut from "./list-item-sign-out";
 import AddIcon from "@mui/icons-material/Add";
 import { ProfileDisplay } from "./profile-display";
 import { Divider } from "@mui/material";
