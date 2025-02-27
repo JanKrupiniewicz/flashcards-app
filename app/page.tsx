@@ -4,8 +4,11 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import NextLink from "next/link";
+import { auth } from "@/lib/auth";
 
 const Home = async () => {
+  const session = await auth();
+
   return (
     <Container
       maxWidth="lg"
@@ -28,15 +31,15 @@ const Home = async () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-          Material UI - Next.js App Router example in TypeScript
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: "bold",
+          }}
+        >
+          Next-Flashcards
         </Typography>
-        <Link href="/sign-in" color="secondary" component={NextLink}>
-          Sign In
-        </Link>
-        <Link href="/sign-up" color="secondary" component={NextLink}>
-          Sign Up
-        </Link>
+        <Typography>Your new favorite flashcard app</Typography>
       </Box>
     </Container>
   );

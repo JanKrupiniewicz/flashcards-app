@@ -1,4 +1,5 @@
 import { GithubSignIn } from "@/components/github-sign-in";
+import GoogleSignIn from "@/components/google-sign-in";
 import { SignUpForm } from "@/components/sign-up-form";
 import { auth } from "@/lib/auth";
 import { Box, Container, Divider, Stack, Typography } from "@mui/material";
@@ -47,7 +48,7 @@ const signUpPage = async () => {
           }}
         >
           <GithubSignIn />
-          <GithubSignIn />
+          <GoogleSignIn />
         </Stack>
 
         <Divider>Or continue with email</Divider>

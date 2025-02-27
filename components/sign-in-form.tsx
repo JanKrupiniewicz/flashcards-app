@@ -29,7 +29,7 @@ const SignInForm = () => {
     });
 
     if (response.ok) {
-      redirect("/discover");
+      window.location.href = "/discover";
     }
   };
 
